@@ -1,0 +1,15 @@
+/installer/
+│
+├── main.sh                 # Script principal que llama a los módulos
+├── config.sh               # Configuraciones comunes y variables
+├── functions.sh            # Funciones de utilidad compartidas
+│
+├── modules/
+│   ├── 01_dependencies.sh  # Instalación de dependencias del sistema
+│   ├── 02_postgresql.sh    # Configuración de PostgreSQL
+│   ├── 03_django.sh        # Configuración del backend Django
+│   ├── 04_react.sh         # Configuración del frontend React
+│   ├── 05_nginx.sh         # Configuración de Nginx y SSL
+│   └── 06_services.sh      # Configuración de servicios systemd
+│
+└── templates/              # Plantillas para configuración
