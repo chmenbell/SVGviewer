@@ -1,0 +1,13 @@
+[Unit]
+Description=SVGViewer Frontend Service
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/${APP_NAME}/frontend
+ExecStart=/usr/bin/npm run preview
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

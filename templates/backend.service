@@ -1,0 +1,14 @@
+[Unit]
+Description=SVGViewer Backend Service
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/${APP_NAME}/backend
+Environment="PATH=/opt/${APP_NAME}/backend/venv/bin"
+ExecStart=/opt/${APP_NAME}/backend/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 core.wsgi:application
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
